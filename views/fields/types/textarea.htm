@@ -1,0 +1,7 @@
+<div class="{{ classes }}">
+    {% if label %}
+        <label for="{{ id }}" class="form-field__label">{{ label }}</label>
+    {% endif %}
+    <textarea id="{{ id }}" name="{{ name }}" type="{{ type }}"{{ attrs|raw }} class="form-field__input">{{ value }}</textarea>
+    <span data-validate-for="{{ name }}" class="form-field__message"></span>
+</div>

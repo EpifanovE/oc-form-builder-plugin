@@ -1,0 +1,14 @@
+<div class="form{{ __SELF__.getClasses() }}">
+    <form data-request="{{ __SELF__ }}::onSubmit" data-request-flash data-request-validate>
+
+        {% for field in __SELF__.getFields() %}
+        {{ field.getHtml()|raw }}
+        {% endfor %}
+
+        <div class="form__field">
+            <button type="submit" class="button button_submit form__submit" data-attach-loading>
+                <span class="button__text">{{ __SELF__.getSubmitText() }}</span>
+            </button>
+        </div>
+    </form>
+</div>

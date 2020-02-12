@@ -1,0 +1,6 @@
+plugin:
+    name: 'eev.forms::lang.plugin.name'
+    description: 'eev.forms::lang.plugin.description'
+    author: 'Evgeny Epifanov'
+    icon: icon-list-alt
+    homepage: 'https://eecode.ru'

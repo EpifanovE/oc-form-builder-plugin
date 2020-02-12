@@ -1,0 +1,36 @@
+.form {
+  & form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  &__field {
+    flex: 1 0 100%;
+    margin-bottom: 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (min-width: 1024px) {
+      &_w_3 {
+        flex: 0 0 25%;
+      }
+
+      &_w_4 {
+        flex: 0 0 33.33%;
+      }
+
+      &_w_6 {
+        flex: 0 0 50%;
+      }
+
+      &_w_8 {
+        flex: 0 0 66.67%;
+      }
+
+      &_w_9 {
+        flex: 0 0 75%;
+      }
+    }
+  }
+}

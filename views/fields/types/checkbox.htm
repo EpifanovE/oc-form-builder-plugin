@@ -1,0 +1,16 @@
+<div class="{{ classes }}">
+    {% if label %}
+    <span class="form-field__title">{{ label|raw }}</span>
+    {% endif %}
+
+    <div class="form-field__items">
+    {% for key, option in options %}
+    <span class="form-field__item{{ item_classes }}">
+        <input name="{{ name }}" id="{{ id ~ '-' ~ key}}" type="{{ type }}"{{ attrs|raw }} class="form-field__input" value="{{ key }}"{% if key == default %} checked="checked"{% endif %}>
+        <label for="{{ id ~ '-' ~ key}}" class="form-field__label">{{ option|raw }}</label>
+    </span>
+    {% endfor %}
+    </div>
+
+    <span data-validate-for="{{ name }}" class="form-field__message"></span>
+</div>

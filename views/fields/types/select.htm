@@ -1,0 +1,11 @@
+<div class="{{ classes }}">
+    {% if label %}
+        <label for="{{ id }}" class="form-field__label">{{ label }}</label>
+    {% endif %}
+    <select id="{{ id }}" name="{{ name }}" {{ attrs|raw }} class="form-field__input">
+        {% for key, option in options %}
+            <option value="{{ key }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+    <span data-validate-for="{{ name }}" class="form-field__message"></span>
+</div>

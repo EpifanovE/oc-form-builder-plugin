@@ -1,0 +1,30 @@
+subject = {{ data.subject }}
+==
+{{ data.subject }}
+
+{{ data.desc }}
+
+{% for key, item in data.fields %}
+{% if item.label %}{{ item.label }}{% else %}{{ key }}{% endif %}: {% if item.value %}{{ item.value }}{% endif %}
+
+{% endfor %}
+
+==
+<h3>{{ data.subject }}</h3>
+<p>{{ data.desc }}</p>
+<ul>
+{% for key, item in data.fields %}
+<li>
+    <b>
+        {% if item.label %}
+            {{ item.label }}
+        {% else %}
+            {{ key }}
+        {% endif %}:
+    </b>
+    {% if item.value %}
+        {{ item.value }}
+    {% endif %}
+</li>
+{% endfor %}
+</ul>
