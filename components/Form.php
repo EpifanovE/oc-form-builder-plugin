@@ -25,7 +25,7 @@ class Form extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'eev.forms::lang.components.form.name',
+            'name' => 'eev.forms::lang.components.form.name',
             'description' => 'eev.forms::lang.components.form.desc'
         ];
     }
@@ -33,21 +33,21 @@ class Form extends ComponentBase
     public function defineProperties()
     {
         return [
-            'form'      => [
-                'title'             => 'eev.forms::lang.form',
-                'description'       => '',
-                'default'           => 'none',
-                'type'              => 'dropdown',
+            'form' => [
+                'title' => 'eev.forms::lang.form',
+                'description' => '',
+                'default' => 'none',
+                'type' => 'dropdown',
                 'showExternalParam' => false,
-                'group'             => 'eev.forms::lang.params',
+                'group' => 'eev.forms::lang.params',
             ],
             'adv_class' => [
-                'title'             => 'eev.forms::lang.adv_class',
-                'description'       => '',
-                'default'           => '',
-                'type'              => 'string',
+                'title' => 'eev.forms::lang.adv_class',
+                'description' => '',
+                'default' => '',
+                'type' => 'string',
                 'showExternalParam' => false,
-                'group'             => 'eev.forms::lang.params',
+                'group' => 'eev.forms::lang.params',
             ],
         ];
     }
@@ -66,7 +66,7 @@ class Form extends ComponentBase
     {
         $classes = [];
 
-        if ( ! empty($this->property('adv_class'))) {
+        if (!empty($this->property('adv_class'))) {
             $classes[] = $this->property('adv_class');
         }
 
@@ -118,5 +118,10 @@ class Form extends ComponentBase
                 Flash::error($message);
             }
         }
+    }
+
+    protected function checkForm()
+    {
+        return !empty($this->property('form')) && !empty($this->form);
     }
 }

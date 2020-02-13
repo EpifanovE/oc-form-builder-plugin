@@ -1,3 +1,4 @@
+{% if __SELF__.checkForm() %}
 <div class="form{{ __SELF__.getClasses() }}">
     <form data-request="{{ __SELF__ }}::onSubmit" data-request-flash data-request-validate>
 
@@ -12,3 +13,4 @@
         </div>
     </form>
 </div>
+{% endif %}
