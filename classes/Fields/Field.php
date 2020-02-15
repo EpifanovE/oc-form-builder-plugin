@@ -318,4 +318,8 @@ class Field
 
         return $classes;
     }
+
+    public function getTypeName() {
+        return $this->typeName;
+    }
 }

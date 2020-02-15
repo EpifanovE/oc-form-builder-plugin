@@ -217,7 +217,10 @@ class Form
     public function hasFieldType($type)
     {
         foreach ($this->fields as $field) {
-            if ($field->getType() === $type) {
+            /**
+             * @var Field $field
+             */
+            if ($field->getTypeName() === $type) {
                 return true;
             }
 

@@ -128,7 +128,7 @@ class Form extends ComponentBase
         }
     }
 
-    protected function checkForm()
+    public function checkForm()
     {
         return !empty($this->property('form')) && !empty($this->form);
     }
