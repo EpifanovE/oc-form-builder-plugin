@@ -26,6 +26,14 @@ class Form
 
     protected $submitText;
 
+    protected $showTitle = false;
+
+    protected $textBefore = '';
+
+    protected $textAfter = '';
+
+    protected $textBeforeSubmit = '';
+
     public function __construct($name)
     {
         $this->name = $name;
@@ -226,5 +234,41 @@ class Form
 
             return false;
         }
+    }
+
+    public function showTitle() {
+        $this->showTitle = true;
+        return $this;
+    }
+
+    public function isShowTitle() {
+        return $this->showTitle;
+    }
+
+    public function setTextBefore($text) {
+        $this->textBefore = $text;
+        return $this;
+    }
+
+    public function getTextBefore() {
+        return $this->textBefore;
+    }
+
+    public function setTextAfter($text) {
+        $this->textAfter = $text;
+        return $this;
+    }
+
+    public function getTextAfter() {
+        return $this->textAfter;
+    }
+
+    public function setTextBeforeSubmit($text) {
+        $this->textBeforeSubmit = $text;
+        return $this;
+    }
+
+    public function getTextBeforeSubmit() {
+        return $this->textBeforeSubmit;
     }
 }

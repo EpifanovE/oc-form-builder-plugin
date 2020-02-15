@@ -1,16 +1,37 @@
 {% if __SELF__.checkForm() %}
 <div class="form{{ __SELF__.getClasses() }}">
     <form data-request="{{ __SELF__ }}::onSubmit" data-request-flash data-request-validate>
+        {% if __SELF__.isShowTitle() %}
+            <h3 class="form__title">
+                {{ __SELF__.getTitle() }}
+            </h3>
+        {% endif %}
+        {% if __SELF__.getTextBefore() %}
+            <p class="form__text form__text_before">
+                {{ __SELF__.getTextBefore() }}
+            </p>
+        {% endif %}
 
         {% for field in __SELF__.getFields() %}
-        {{ field.getHtml()|raw }}
+            {{ field.getHtml()|raw }}
         {% endfor %}
+
+        {% if __SELF__.getTextBeforeSubmit() %}
+            <p class="form__text form__text_before-submit">
+                {{ __SELF__.getTextBeforeSubmit() }}
+            </p>
+        {% endif %}
 
         <div class="form__field">
             <button type="submit" class="button button_submit form__submit" data-attach-loading>
                 <span class="button__text">{{ __SELF__.getSubmitText() }}</span>
             </button>
         </div>
+        {% if __SELF__.getTextAfter() %}
+            <p class="form__text form__text_after">
+                {{ __SELF__.getTextAfter() }}
+            </p>
+        {% endif %}
     </form>
 </div>
 {% endif %}

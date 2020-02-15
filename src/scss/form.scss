@@ -5,6 +5,7 @@
     margin-left: -15px;
     margin-right: -15px;
   }
+
   &__field {
     flex: 1 0 100%;
     margin-bottom: 1rem;
@@ -32,5 +33,13 @@
         flex: 0 0 75%;
       }
     }
+  }
+
+  &__title,
+  &__text {
+    flex: 1 0 100%;
+    margin-bottom: 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

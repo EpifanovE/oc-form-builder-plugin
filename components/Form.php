@@ -132,4 +132,24 @@ class Form extends ComponentBase
     {
         return !empty($this->property('form')) && !empty($this->form);
     }
+
+    public function isShowTitle() {
+        return $this->form->isShowTitle();
+    }
+
+    public function getTitle() {
+        return $this->form->getDisplayName();
+    }
+
+    public function getTextBefore() {
+        return $this->form->getTextBefore();
+    }
+
+    public function getTextAfter() {
+        return $this->form->getTextAfter();
+    }
+
+    public function getTextBeforeSubmit() {
+        return $this->form->getTextBeforeSubmit();
+    }
 }
