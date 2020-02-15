@@ -86,7 +86,8 @@ class Form
         return $this;
     }
 
-    public function setFields($fields) {
+    public function setFields($fields)
+    {
         $this->fields = $fields;
         return $this;
     }
@@ -118,7 +119,8 @@ class Form
         return $this;
     }
 
-    public function handle($data) {
+    public function handle($data)
+    {
 
         Event::fire('eev.forms.beforeHandle', [$data]);
 
@@ -133,7 +135,8 @@ class Form
         Event::fire('eev.forms.afterHandle', [$data]);
     }
 
-    public function getRules() {
+    public function getRules()
+    {
         if (empty($this->getFields())) {
             return [];
         }
@@ -150,12 +153,14 @@ class Form
         return $rules;
     }
 
-    public function setSuccessMessage($message) {
+    public function setSuccessMessage($message)
+    {
         $this->successMessage = $message;
         return $this;
     }
 
-    public function getSuccessMessage() {
+    public function getSuccessMessage()
+    {
 
         if ($this->successMessage === false) {
             return '';
@@ -168,12 +173,14 @@ class Form
         return Lang::get('eev.forms::lang.messages.success');
     }
 
-    public function setErrorMessage($message) {
+    public function setErrorMessage($message)
+    {
         $this->errorMessage = $message;
         return $this;
     }
 
-    public function getErrorMessage() {
+    public function getErrorMessage()
+    {
         if ($this->errorMessage === false) {
             return '';
         }
@@ -185,21 +192,36 @@ class Form
         return Lang::get('eev.forms::lang.messages.error');
     }
 
-    public function setAttributeNames($names) {
+    public function setAttributeNames($names)
+    {
         $this->attributesNames = $names;
         return $this;
     }
 
-    public function getAttributeNames() {
+    public function getAttributeNames()
+    {
         return $this->attributesNames;
     }
 
-    public function setSubmitText($text) {
+    public function setSubmitText($text)
+    {
         $this->submitText = $text;
         return $this;
     }
 
-    public function getSubmitText() {
+    public function getSubmitText()
+    {
         return $this->submitText;
+    }
+
+    public function hasFieldType($type)
+    {
+        foreach ($this->fields as $field) {
+            if ($field->getType() === $type) {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

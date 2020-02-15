@@ -14,9 +14,9 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        Event::listen('cms.page.beforeDisplay', function ($controller, $action, $params) {
-            $controller->addJs('https://www.google.com/recaptcha/api.js');
-        });
+//        Event::listen('cms.page.beforeDisplay', function ($controller, $action, $params) {
+//            $controller->addJs('https://www.google.com/recaptcha/api.js');
+//        });
 
         Validator::extend('recaptcha', ReCaptcha::class);
 

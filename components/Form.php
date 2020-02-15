@@ -84,7 +84,15 @@ class Form extends ComponentBase
 
     public function onRun()
     {
+        if (!$this->checkForm()) {
+            return;
+        }
         $this->addCss('/plugins/eev/forms/assets/css/form-component.min.css');
+
+        if ($this->form->hasFieldType('recaptcha')) {
+            $this->addJs('https://www.google.com/recaptcha/api.js');
+        }
+
         $this->addJs('/plugins/eev/forms/assets/js/form-component.min.js');
     }
 
