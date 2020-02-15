@@ -66,6 +66,7 @@ class Form
 
     /**
      * @param $name
+     *
      * @return Form|null
      */
     public static function get($name)
@@ -91,18 +92,21 @@ class Form
     public function setDisplayName($displayName)
     {
         $this->displayName = $displayName;
+
         return $this;
     }
 
     public function setFields($fields)
     {
         $this->fields = $fields;
+
         return $this;
     }
 
     public function addField(Field $field)
     {
         $this->fields[] = $field;
+
         return $this;
     }
 
@@ -124,6 +128,7 @@ class Form
     public function addHandler(FormHandler $handler)
     {
         $this->handlers[] = $handler;
+
         return $this;
     }
 
@@ -164,6 +169,7 @@ class Form
     public function setSuccessMessage($message)
     {
         $this->successMessage = $message;
+
         return $this;
     }
 
@@ -184,6 +190,7 @@ class Form
     public function setErrorMessage($message)
     {
         $this->errorMessage = $message;
+
         return $this;
     }
 
@@ -203,6 +210,7 @@ class Form
     public function setAttributeNames($names)
     {
         $this->attributesNames = $names;
+
         return $this;
     }
 
@@ -214,6 +222,7 @@ class Form
     public function setSubmitText($text)
     {
         $this->submitText = $text;
+
         return $this;
     }
 
@@ -232,43 +241,56 @@ class Form
                 return true;
             }
 
-            return false;
         }
+
+        return false;
     }
 
-    public function showTitle() {
+    public function showTitle()
+    {
         $this->showTitle = true;
+
         return $this;
     }
 
-    public function isShowTitle() {
+    public function isShowTitle()
+    {
         return $this->showTitle;
     }
 
-    public function setTextBefore($text) {
+    public function setTextBefore($text)
+    {
         $this->textBefore = $text;
+
         return $this;
     }
 
-    public function getTextBefore() {
+    public function getTextBefore()
+    {
         return $this->textBefore;
     }
 
-    public function setTextAfter($text) {
+    public function setTextAfter($text)
+    {
         $this->textAfter = $text;
+
         return $this;
     }
 
-    public function getTextAfter() {
+    public function getTextAfter()
+    {
         return $this->textAfter;
     }
 
-    public function setTextBeforeSubmit($text) {
+    public function setTextBeforeSubmit($text)
+    {
         $this->textBeforeSubmit = $text;
+
         return $this;
     }
 
-    public function getTextBeforeSubmit() {
+    public function getTextBeforeSubmit()
+    {
         return $this->textBeforeSubmit;
     }
 }
